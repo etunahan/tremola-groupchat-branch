@@ -39,11 +39,24 @@ class MainActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_main)
         tremolaState = TremolaState(this)
+
+        //Testing / Debugging
+        /**
+        val gmTest = GroupMessagesTest(tremolaState.idStore.identity)
+        gmTest.encryptDecryptTest()
+        gmTest.deriveSecretTest()
+        gmTest.slotTest()
+        gmTest.unslotTest()
+        gmTest.boxTest()
+        gmTest.box2Test()
+        gmTest.unboxTest()
+        gmTest.cloakedMsgIdTest()
+        */
+
         mkSockets()
 
         Log.d("IDENTITY", "is ${tremolaState.idStore.identity.toRef()}")
