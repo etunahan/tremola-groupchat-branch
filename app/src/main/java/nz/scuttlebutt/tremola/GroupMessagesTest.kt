@@ -128,7 +128,7 @@ class GroupMessagesTest(val identity: SSBid) {
 
         val ciphertext = identity.encryptGroupMessage(plain_text, feed_id, prev_msg_id, rcps, msg_key)
         if (ciphertext == null){
-            Log.d("errorcode", "boxEmptyPlainText")
+            Log.d("Test errorcode", "boxEmptyPlainText")
         } else {
             Log.d("Test box output", ciphertext.removeSuffix(".box2"))
         }

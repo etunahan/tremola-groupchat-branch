@@ -301,7 +301,7 @@ class SSBid { // ed25519
 
         //header is 32 bits so skip the first 32 bits & start with the first key-slot (at index 32)
         var i = 1
-        while ((i < 10) and ((i * 32) < raw.size)){ //we stop after 10 slots (or if we are done)
+        while ((i < 16) and ((i * 32) < raw.size)){ //we stop after 16 slots (or if we are done)
 
             var slot_content = raw.copyOfRange(i * 32, (i + 1) * 32)
             val msg_key = unslot(slot_content, feed_id, prev_msg_id, recp_key, scheme)
